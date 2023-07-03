@@ -4,8 +4,9 @@
 /**
  * _strspn - this function gets the length of prefix substring
  *
- * @s; is the pointer
+ * @s: is the pointer
  * @accept: accepted
+ *
  * Return: returns length
  */
 
@@ -33,6 +34,6 @@ unsigned int _strspn(char *s, char *accept)
 		}
 		length++;
 	}
-	return length;
+	return (length);
 }
 
