@@ -1,50 +1,40 @@
-#include <string.h>
 #include "main.h"
 
 /**
- * times_table - prints xtables up to 9x
- *
- * Desription: Prints the 9 time table
- * Return: void
+ * times_table - check description
+ * Description: It prints 9 times table starting with 0
+ * Return: Nothing.
  */
 void times_table(void)
 {
-	int a, r, c, times, counter;
+	int i, j, n;
 
-	/* for the 0x */
-	for (a = 0; a <= 9; a++)
+	for (i = 0; i <= 9; i++)
 	{
-		_putchar('0');
-		if (a != 9)
+		for (j = 0; j <= 9; j++)
 		{
-			_putchar(',');
-			_putchar(' ');
-		}
-	}
-	_putchar('\n');
+			n = i * j;
 
-	/* The times table from 1 - 9 */
-	for (r = 1; r <= 9; r++)
-	{
-		counter = 0;
-		for (c = 0; c <= 9; c++)
-		{
-			times = (r * counter);
-			if (times / 10 > 0)
+			if ((n / 10) == 0)
 			{
-				_putchar((times / 10) + '0');
-				_putchar((times % 10) + '0');
-			}
-			else
-			{
-				_putchar((times % 10) + '0');
-			}
-			if (c != 9)
-			{
+				if (j != 0)
+					_putchar(' ');
+				_putchar(n + '0');
+
+				if (j == 9)
+					continue;
 				_putchar(',');
 				_putchar(' ');
 			}
-			counter++;
+			else
+			{
+				_putchar((n / 10) + '0');
+				_putchar((n % 10) + '0');
+				if (j == 9)
+					continue;
+				_putchar(',');
+				_putchar(' ');
+			}
 		}
 		_putchar('\n');
 	}
